@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('trueType');
+}
+:root {
+    --font-color: red;
+    --font-family: 'OpenSans';
+    --img-max-width: 400px;
+}
+body {
+    color: var(--font-color);
+    font-family: var(--font-family);
+}
+
+.project-img {
+    max-width: var(--img-max-width);
+}
