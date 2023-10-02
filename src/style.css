@@ -75,9 +75,22 @@ i {
 .content-container {
     margin-top: 50px;
     margin-bottom: 50px;
+    min-height: 100vh;
+
+    /* hide content */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 
+        opacity 0.7s ease,
+        transform 0.7s ease
 }
 
 @keyframes headerAnimation {
     from {transform: translateX(50%)};
     to {transform: translateX(0)};
+}
+
+.content-container.active {
+    opacity: 1;
+    transform: translateY(0);
 }
