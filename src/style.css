@@ -9,6 +9,7 @@
     --main-color: #C12822;
     /* --vertical-spacing: 50px; */
     --small-font-size: 25px;
+    --link-size: 30px;
 }
 
 body {
@@ -68,6 +69,10 @@ i {
     font-size: 75px;
 }
 
+i.link {
+    font-size: var(--link-size);
+}
+
 .project-img {
     max-width: var(--img-max-width);
 }
@@ -93,4 +98,10 @@ i {
 .content-container.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.link {
+    cursor: pointer;
+    width: var(--link-size);
 }

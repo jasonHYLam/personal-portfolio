@@ -5,11 +5,11 @@ export function show() {
 
     content.forEach(el => {
         if (el.classList.contains('active')) return;
+
         const elTop = el.getBoundingClientRect().top;
         if (elTop < windowHeight - elVisible) {
             el.classList.add('active')
         }
-        // else el.classList.remove('active');
     })
 }
 
