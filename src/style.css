@@ -3,15 +3,81 @@
     src: url('./fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('trueType');
 }
 :root {
-    --font-color: red;
+    --font-color: #C12822;
     --font-family: 'OpenSans';
     --img-max-width: 400px;
+    --main-color: #C12822;
+    /* --vertical-spacing: 50px; */
+    --small-font-size: 25px;
 }
+
 body {
+    margin-top: 0;
     color: var(--font-color);
+
     font-family: var(--font-family);
+    /* maybe i need to use media query for this... */
+    margin-left: 20vw;
+    /* margin-right: 20vw; */
+}
+
+body, header {
+    margin-right: 20vw;
+    /* margin-left: 20vw; */
+}
+
+section {
+    /* margin-top: 50px; */
+}
+
+header {
+    height: 40px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: white;
+}
+
+header button {
+    background: none;
+    border: none;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    cursor: pointer;
+    font-size: var(--small-font-size);
+    animation: 0.8s headerAnimation;
+}
+
+hr {
+    background-color: var(--font-color);
+    border: none;
+    height: 1px;
+    margin-bottom: var(--vertical-spacing);
+    margin-top: var(--vertical-spacing);
+}
+h1 {
+    margin-top: 40px;
+    font-size: 60px;
+}
+
+i {
+    font-size: 75px;
 }
 
 .project-img {
     max-width: var(--img-max-width);
+}
+
+.content-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@keyframes headerAnimation {
+    from {transform: translateX(50%)};
+    to {transform: translateX(0)};
 }
