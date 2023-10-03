@@ -1,5 +1,5 @@
 import "./style.css"
-import { show, showOnScroll } from "./showContentAnimation"
+import { showContentContainer, showOnScroll } from "./showContentAnimation"
 
-show();
+showContentContainer();
 showOnScroll();

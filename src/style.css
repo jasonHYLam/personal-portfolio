@@ -10,6 +10,12 @@
     /* --vertical-spacing: 50px; */
     --small-font-size: 25px;
     --link-size: 30px;
+    --main-gap: 50px;
+    --big-gap: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,9 +47,12 @@ header {
     flex-direction: row;
     justify-content: right;
     background-color: white;
+    z-index: 100;
+    gap: 20px;
 }
 
-header button {
+/* header button { */
+header a {
     background: none;
     border: none;
     font-family: var(--font-family);
@@ -51,6 +60,10 @@ header button {
     cursor: pointer;
     font-size: var(--small-font-size);
     animation: 0.8s headerAnimation;
+}
+
+p {
+    margin-top: 0;
 }
 
 hr {
@@ -65,21 +78,32 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 i {
     font-size: 75px;
 }
 
-i.link {
+i.icon {
     font-size: var(--link-size);
 }
 
 .project-img {
     max-width: var(--img-max-width);
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.project-img:hover {
+    transform: scale(1.05);
 }
 
 .content-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
     min-height: 100vh;
 
     /* hide content */
@@ -90,18 +114,65 @@ i.link {
         transform 0.7s ease
 }
 
-@keyframes headerAnimation {
-    from {transform: translateX(50%)};
-    to {transform: translateX(0)};
-}
-
 .content-container.active {
     opacity: 1;
     transform: translateY(0);
 }
 
+.intro-container {
+    padding-top: 200px;
+
+}
+
+.project-container {
+    margin-bottom: 80px;
+}
+
+.project-container-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: var(--main-gap);
+}
+
+.about-container-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
+
+
+
+@keyframes headerAnimation {
+    from {transform: translateX(50%)};
+    to {transform: translateX(0)};
+}
+
+.tech-icons-container {
+    float: right;
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    gap: 40px;
+}
+.icon {
+    width: var(--link-size);
+}
 
 .link {
     cursor: pointer;
-    width: var(--link-size);
+    opacity: 0;
+    transition: opacity 0.8s ease
 }
+
+.link.active {
+    opacity: 1;
+}
+
+.link.active:hover {
+    opacity: 50%;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
