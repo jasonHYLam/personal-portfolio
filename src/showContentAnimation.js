@@ -13,7 +13,7 @@ export function show(className, visibleHeight) {
 }
 
 export function showContentContainer() {
-    show('.content-container', 350)
+    show('.content-container', 380)
 }
 
 export function showLinkIcon() {

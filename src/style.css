@@ -5,13 +5,21 @@
 :root {
     --font-color: #C12822;
     --font-family: 'OpenSans';
-    --img-max-width: 400px;
+
+    --mobile-icon-size: 40px;
+    --desktop-icon-size: 75px;
+
+    --mobile-img-max-width: 300px;
+    --desktop-img-max-width: 400px;
     --main-color: #C12822;
     /* --vertical-spacing: 50px; */
     --small-font-size: 25px;
     --link-size: 30px;
+    --small-gap: 30px;
     --main-gap: 50px;
     --big-gap: 100px;
+    --about-img-size: 300px;
+    --contact-icon-size: 50px;
 }
 
 html {
@@ -19,22 +27,10 @@ html {
 }
 
 body {
+    margin: 0;
     margin-top: 0;
     color: var(--font-color);
-
     font-family: var(--font-family);
-    /* maybe i need to use media query for this... */
-    margin-left: 20vw;
-    /* margin-right: 20vw; */
-}
-
-body, header {
-    margin-right: 20vw;
-    /* margin-left: 20vw; */
-}
-
-section {
-    /* margin-top: 50px; */
 }
 
 header {
@@ -45,23 +41,28 @@ header {
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: right;
     background-color: white;
+    justify-content: right;
     z-index: 100;
     gap: 20px;
 }
 
-/* header button { */
 header a {
     background: none;
     border: none;
     font-family: var(--font-family);
     color: var(--font-color);
     cursor: pointer;
-    font-size: var(--small-font-size);
     animation: 0.8s headerAnimation;
 }
 
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
 p {
     margin-top: 0;
 }
@@ -73,44 +74,75 @@ hr {
     margin-bottom: var(--vertical-spacing);
     margin-top: var(--vertical-spacing);
 }
-h1 {
-    margin-top: 40px;
-    font-size: 60px;
-}
-
-h2 {
-    font-size: 40px;
-}
-
-i {
-    font-size: 75px;
-}
 
 i.icon {
     font-size: var(--link-size);
 }
 
+footer {
+    padding-top: var(--main-gap);
+    padding-bottom: var(--big-gap);
+}
+
+.about-container-content{
+    display: flex;
+    flex-direction: column;
+    gap: var(--big-gap);
+}
+
+.about-container-top {
+    display: flex;
+    gap: var(--big-gap);
+    justify-content: space-between;
+}
+
+.about-img {
+    box-shadow: -4px 10px 10px #97B09F;
+}
+
+.about-img, .about-img-hover {
+    max-width: var(--about-img-size);
+    object-fit: cover;
+    border-radius: 50%;
+}
 .project-img {
-    max-width: var(--img-max-width);
     object-fit: cover;
     transition: transform 0.3s;
+}
+
+.about-image-container {
+    position: relative;
+}
+.about-image-container .about-img-hover {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+}
+
+.about-image-container:hover .about-img-hover {
+    display: block;
 }
 
 .project-img:hover {
     transform: scale(1.05);
 }
 
-.content-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
+.intro-container {
     min-height: 100vh;
+
+}
+.content-container {
+    padding-top: var(--main-gap);
+    padding-bottom: var(--main-gap);
+    box-sizing: border-box;
+    /* min-height: 100vh; */
 
     /* hide content */
     opacity: 0;
     transform: translateY(50px);
     transition: 
-        opacity 0.7s ease,
+        opacity 1.7s ease,
         transform 0.7s ease
 }
 
@@ -119,28 +151,15 @@ i.icon {
     transform: translateY(0);
 }
 
-.intro-container {
-    padding-top: 200px;
-
-}
 
 .project-container {
     margin-bottom: 80px;
 }
 
-.project-container-bottom {
+.project-container-content{
     display: flex;
-    flex-direction: row;
     gap: var(--main-gap);
 }
-
-.about-container-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 200px;
-}
-
-
 
 @keyframes headerAnimation {
     from {transform: translateX(50%)};
@@ -148,11 +167,12 @@ i.icon {
 }
 
 .tech-icons-container {
-    float: right;
     display: grid;
-    grid-template-columns: repeat(5, 75px);
+    /* grid-template-columns: repeat(5, 75px); */
+    grid-template-columns: repeat(5,1fr);
     gap: 40px;
 }
+
 .icon {
     width: var(--link-size);
 }
@@ -176,3 +196,158 @@ a:link, a:visited {
     color: var(--font-color);
 }
 
+a {
+    transition: opacity 0.5s;
+}
+
+a:hover {
+    opacity: 50%;
+}
+
+.contact-link-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--main-gap);
+}
+
+i.contact-icon, img.contact-icon {
+    width: var(--contact-icon-size);
+    font-size: var(--contact-icon-size);
+}
+
+@media (max-width: 500px) {
+
+    .intro-container {
+        padding-top: 0px;
+    }
+
+    body {
+        margin-left: 10vw;
+    }
+
+    header {
+        height: 20px;
+    }
+
+    body, header {
+        margin-right: 10vw;
+    }
+
+    .about-container-top {
+        flex-direction: column;
+    }
+
+    .project-img {
+        max-width: var(--mobile-img-max-width);
+    }
+
+    .project-container-content {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .project-container-right {
+        display: flex;
+        justify-content: right;
+    }
+
+    .about-image-container {
+        max-width: var(--mobile-img-max-width);
+    }
+
+    .tech-icons-container {
+        gap: 0px;
+    }
+
+    .tech-icon {
+        font-size: var(--mobile-icon-size);
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .intro-container {
+        padding-top: 200px;
+    }
+
+    body {
+        margin-left: 20vw;
+    }
+
+    header {
+        padding-top: var(--small-gap);
+    }
+
+    body, header {
+        padding-right: 20vw;
+    }
+
+    header a {
+        font-size: var(--small-font-size);
+    }
+
+    .about-container-top {
+        flex-direction: row;
+    }
+
+    .project-img {
+        max-width: var(--desktop-img-max-width);
+    }
+
+    .project-container-content {
+        flex-direction: row;
+    }
+
+    .about-image-container {
+        position: relative;
+        max-width: var(--desktop-img-max-width);
+        float: right;
+    }
+
+    .tech-icons-container {
+        float: right;
+    }
+
+    .tech-icon {
+        font-size: var(--desktop-icon-size);
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1000px) {
+    body {
+        margin-left: 15vw;
+    }
+
+    body, header {
+        margin-right: 15vw;
+    }
+
+    header a {
+        font-size: var(--small-font-size);
+    }
+
+    .intro-container {
+        padding-top: 200px;
+    }
+
+    .about-container-top {
+        flex-direction: row;
+    }
+
+    .project-container-content {
+        flex-direction: row;
+    }
+
+    .project-img {
+        max-width: var(--desktop-img-max-width);
+    }
+    .about-image-container {
+        max-width: var(--desktop-img-max-width);
+    }
+
+    .tech-icon {
+        font-size: var(--desktop-icon-size);
+    }
+}

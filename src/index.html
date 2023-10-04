@@ -34,31 +34,38 @@
 
     <section>
         <div class="content-container intro-container">
-            <h1>Hi</h1>
-            <h1>My name is Jason L.</h1>
+            <h1>Hi!</h1>
+            <h1>I'm Jason Lam.</h1>
             <h2>Web Developer</h2>
         </div>
         <hr>
         <div class="content-container about-container" id="about-container">
-                <picture></picture>
                 <h2>About me</h2>
-                <div class="about-container-bottom">
-                    <div class="about-container-left">
-                        <p>Web development is what I'm about.</p>
-                        <p>I'm from London.</p>
-                        <p>Bouldering and b-boying is fun!</p>
+                <div class="about-container-content">
+                    <div class="about-container-top">
+                        <div class="about-container-left">
+                            <p>Web development is what I'm about.</p>
+                            <p>I'm from London.</p>
+                            <p>Bouldering and b-boying are fun!</p>
+                        </div>
+                        <div class="about-container-right">
+                            <div class="about-image-container">
+                                <img class="about-img" src=<%=require("./images/bouldering-2-crop.png")%> alt="">
+                                <img class="about-img-hover" src=<%=require("./images/bouldering-3-crop.png")%> alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-container-right">
+                    <div class="about-container-bottom">
                         <div class="tech-icons-container">
-                            <i class="devicon-html5-plain"></i>
-                            <i class="devicon-css3-plain"></i>
-                            <i class="devicon-javascript-plain"></i>
-                            <i class="devicon-nodejs-plain-wordmark"></i>
-                            <i class="devicon-git-plain"></i>
-                            <i class="devicon-webpack-plain"></i>
-                            <i class="devicon-jest-plain"></i>
-                            <i class="devicon-eslint-original"></i>
-                            <i class="devicon-npm-original-wordmark"></i>
+                            <i class="tech-icon devicon-html5-plain"></i>
+                            <i class="tech-icon devicon-css3-plain"></i>
+                            <i class="tech-icon devicon-javascript-plain"></i>
+                            <i class="tech-icon devicon-nodejs-plain-wordmark"></i>
+                            <i class="tech-icon devicon-git-plain"></i>
+                            <i class="tech-icon devicon-webpack-plain"></i>
+                            <i class="tech-icon devicon-jest-plain"></i>
+                            <i class="tech-icon devicon-eslint-original"></i>
+                            <i class="tech-icon devicon-npm-original-wordmark"></i>
                         </div>
                     </div>
                 </div>
@@ -69,7 +76,7 @@
 
             <div class="project-container">
                 <h3 class="project-title">Calculator App</h3>
-                <div class="project-container-bottom">
+                <div class="project-container-content">
                     <img src=<%=require("./images/calculator.png")%> alt="" class="project-img">
                     <div class="project-container-right">
                         <p class="project-description">Calculator app with a tamagotchi flair.</p>
@@ -81,7 +88,7 @@
 
             <div class="project-container">
                 <h3 class="project-title">Todo List App</h3>
-                <div class="project-container-bottom">
+                <div class="project-container-content">
                     <img src=<%=require("./images/new-todo-list.png")%> alt="" class="project-img">
                     <div class="project-container-right">
                         <p class="project-description">Simple todo list app, featuring the PubSub design pattern. Implements LocalStorage to store todos on your device.</p>
@@ -94,10 +101,10 @@
 
             <div class="project-container">
                 <h3 class="project-title">Battleship</h3>
-                <div class="project-container-bottom">
+                <div class="project-container-content">
                     <img src=<%=require("./images/battleship start.png")%> alt="" class="project-img">
                     <div class="project-container-right">
-                        <p class="project-description">The game 'Battleship', designed with TDD and Jest.</p>
+                        <p class="project-description">The game 'Battleship', designed with a TDD philosophy and Jest.</p>
                         <a class="link" href="https://github.com/jasonHYLam/TOP-battleship" target="_blank" rel="noopener noreferrer"><i class="devicon-github-original icon"></i></a>
                         <a class="link" href="https://jasonhylam.github.io/TOP-battleship/" target="_blank" rel="noopener noreferrer"><img class="open-icon icon" src=<%=require("./icons/open-in-new.svg")%> alt=""></a>
                     </div>
@@ -110,10 +117,18 @@
 
     <hr>
     <footer>
-        <div id="contact-container"></div>
-        <h2>Contact</h2>
-            <i class="devicon-github-original link"></i>
-            <i class="devicon-linkedin-plain-wordmark link"></i>
+        <div id="contact-container">
+            <h2>Contact</h2>
+            <p>Feel free to say hello!</p>
+            <div class="contact-link-icon-container">
+                <a class="" href="https://github.com/jasonHYLam" target="_blank" rel="noopener noreferrer"><i class="devicon-github-original icon contact-icon"></i></a>
+                <a class=""href="https://linkedin.com/in/jason-lam-855681194/" target="_blank" rel="noopener noreferrer"><i class="devicon-linkedin-plain contact-icon"></i></a>
+                <a class=""href="mailto: contactjasonlam@gmail.com" target="_blank" rel="noopener noreferrer"><img class="icon contact-icon" src=<%=require("./icons/email.svg")%> alt=""></a>
+
+            </div>
+
+        </div>
+            
     </footer>
     
 </body>
